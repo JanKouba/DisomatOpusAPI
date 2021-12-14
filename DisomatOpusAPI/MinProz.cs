@@ -19,7 +19,7 @@ namespace DisomatOpusAPI
         string receivedData = string.Empty;                 //Response string
         StringBuilder response = new StringBuilder();       
 
-        const char CR = (char)13;                           //<CR> charactee
+        const char CR = (char)13;                           //<CR> character
 
         private Status status;                              //Communication status -> see enum Status                      
         public Status Status { get => status; }
@@ -53,9 +53,9 @@ namespace DisomatOpusAPI
         public void OpenPort(string port, int baudRate, Parity parity, StopBits stopBits, int dataBits)
         {
             /*
-             * Port settings must fits to device settings
+             * Port settings must fit to device settings
              * The common one is 
-             * 9600 9E1 (9600 kbps, EVEN parity, ONE stop bit, 8 data bits
+             * 9600 8E1 (9600 kbps, EVEN parity, ONE stop bit, 8 data bits)
              */
             if (!serialPort.IsOpen)
             {
@@ -103,7 +103,7 @@ namespace DisomatOpusAPI
              * Request current value
              * <PAYLOAD>
              * Command for return current value is 01#TG#
-             * where 01 is device idetifier - should fits to device setting
+             * where 01 is device identifier - should fits to device setting
              */
             SendCommand("01#TG#");
             response.Clear();
